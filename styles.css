@@ -13,7 +13,7 @@ header {
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #b01a1a;
+    color: #c11616;
 }
 
 .main {
@@ -55,4 +55,3 @@ footer {
     transform: scale(1.1);
     opacity: 0.8; 
 }
-
