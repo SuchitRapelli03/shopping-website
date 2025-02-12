@@ -9,7 +9,23 @@ header {
     padding: 20px;
     text-align: center;
 }
-
+form {
+    background-color: #ffffff;
+    width: 400px;
+    height: 70px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  input {
+    all: unset;
+    font: 16px system-ui;
+    color: #494646;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+  }
 nav a {
     margin: 0 15px;
     text-decoration: none;
