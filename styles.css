@@ -1,73 +1,189 @@
+/* ---------- GENERAL STYLE ---------- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background: #f9f9f9;
+    color: #333;
 }
 
+/* ---------- HEADER ---------- */
 header {
-    background: #f4f4f4;
+    background: #ffffff;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-form {
-    background-color: #ffffff;
-    width: 400px;
-    height: 70px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  input {
-    all: unset;
-    font: 16px system-ui;
-    color: #494646;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
-  }
+
+header h1 {
+    font-size: 2.2em;
+    color: #c11616;
+    margin-bottom: 10px;
+}
+
 nav a {
     margin: 0 15px;
     text-decoration: none;
+    font-weight: 600;
+    color: #555;
+    transition: color 0.3s;
+}
+
+nav a:hover {
     color: #c11616;
 }
 
-.main {
-    padding: 20px;
-}
-
-.featured-products, .product-list {
+/* ---------- SEARCH BAR ---------- */
+form {
+    background: #fff;
+    width: 400px;
+    max-width: 90%;
+    height: 45px;
+    border-radius: 25px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 15px;
+    margin: 15px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
 }
 
-.product {
-    border: 1px solid #efefef;
-    padding: 10px;
-    text-align: center;
-    margin: 10px;
-    width: 200px;
+form:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 
-.product img {
-    max-width: 100%;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #ebe4e4;
-    position: relative;
-    bottom: 0;
+input {
+    all: unset;
     width: 100%;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: #333;
 }
 
+button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #c11616, #ff5252);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* ---------- PRODUCT GRID ---------- */
+.featured-products, 
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px 15px;
+}
+
+/* ---------- PRODUCT CARD ---------- */
+.product {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ---------- PRODUCT IMAGE ---------- */
 .product img {
-    transition: transform 0.4s ease, opacity 0.3s ease;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
 .product img:hover {
-    transform: scale(1.1);
-    opacity: 0.8; 
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+/* ---------- PRODUCT INFO ---------- */
+.product h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.1em;
+    color: #222;
+}
+
+.product p {
+    margin: 0 0 15px 0;
+    font-size: 1em;
+    font-weight: 600;
+    color: #c11616;
+}
+
+/* ---------- ADD TO CART BUTTON (SMALLER VERSION) ---------- */
+.product button {
+    padding: 6px 12px;          /* smaller padding */
+    font-size: 0.9em;           /* slightly smaller text */
+    border-radius: 6px;         /* slightly rounded */
+    background: linear-gradient(45deg, #ff5252, #c11616);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ---------- PRICE BADGE ---------- */
+.product p::before {
+    content: "₹";
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+    .product {
+        width: 180px;
+    }
+
+    .product img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 95%;
+    }
+
+    .product {
+        width: 150px;
+    }
+
+    .product img {
+        height: 150px;
+    }
 }
